@@ -1,0 +1,39 @@
+﻿<Window x:Class="Tizon_MachineProblem.Shapemaker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Shape Maker" Height="376" Width="497">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Column for left side content -->
+            <ColumnDefinition Width="*"/>
+            <!-- Column for right side content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Left side content -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <TextBlock Text="Shape Maker" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+
+            <!-- ComboBox for selecting shapes -->
+            <ComboBox x:Name="shapeComboBox" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" SelectedIndex="0" SelectionChanged="shapeComboBox_SelectionChanged">
+                <ComboBoxItem Content="Select a shape"/>
+                <ComboBoxItem Content="Rectangle"/>
+                <ComboBoxItem Content="Circle"/>
+                <ComboBoxItem Content="Triangle"/>
+            </ComboBox>
+
+            <!-- Button for going back to the dashboard -->
+            <Button Content="Back to Dashboard" Grid.Row="2" HorizontalAlignment="Center" Margin="0,10" Click="BackToDashboard_Click"/>
+        </Grid>
+
+        <!-- Right side content -->
+        <Canvas x:Name="canvas" Grid.Column="1" Background="LightGray"/>
+    </Grid>
+</Window>
